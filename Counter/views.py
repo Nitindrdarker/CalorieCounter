@@ -55,7 +55,10 @@ def home(request):
             bmr = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * age)
             res = bmr * float(exercise)
         if request.user.is_authenticated:
-            profile = Profile.objects.create(user=request.user, bmr = bmr, res=res, bmi = bmi)
+            bmr = "{:.2f}".format(bmr)
+            res="{:.2f}".format(res)
+            bmi = "{:.2f}".format(bmi)
+            profile = Profile.objects.create(user=request.user, bmr = bmr , res = res, bmi = bmi)
             profile.save()
         return render(request, 'home.html', {'bmr':bmr, 'res':res, 'bmi':bmi})
         
