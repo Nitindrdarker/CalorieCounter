@@ -25,7 +25,7 @@ SECRET_KEY = '7)la68*8r=6p%_)*yix8=i1a-9lvmtsd_qs))k=9xv#%a29j!)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['https://caloriecountersystem.herokuapp.com/']
 
 
 # Application definition
