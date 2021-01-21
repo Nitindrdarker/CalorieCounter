@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<div class="slider_section">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="full">
+                  <div id="main_slider" class="carousel vert slide" data-ride="carousel" data-interval="5000">
+                      <div class="carousel-inner">
+                          <div class="carousel-item active">
+                              <div class="row">
+                                  <div class="col-md-5">
+                                      <div class="slider_cont">
+                                          <h3>You can't control everything <br>in your life</h3>
+                                          <p>but you can control what you put in your body.</p>
+                                          
+                                      </div>
+                                  </div>
+                                  <div class="col-md-7">
+                                      <div class="slider_image full text_align_center">
+                                          <img class="img-responsive" src="{% static 'images/4.png' %}" alt="#" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                         
+                          <div class="carousel-item">
+                              <div class="row">
+                                  <div class="col-md-5">
+                                      <div class="slider_cont">
+                                          <h3>You are what you eat<br>, so don't be</h3>
+                                          <p>fast, cheap, easy, or fake.......!</p>
+                                          
+                                      </div>
+                                  </div>
+                                  <div class="col-md-7">
+                                      <div class="slider_image full text_align_center">
+                                          <img class="img-responsive" src="{% static 'images/2.png' %}" alt="#" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <div class="row">
+                                  <div class="col-md-5">
+                                      <div class="slider_cont">
+                                          <h3>When diet is wrong<br>Medicine is of no use.</h3>
+                                          <p>When diet is correct , Medicine is of no need</p>
+                                          
+                                      </div>
+                                  </div>
+                                  <div class="col-md-7 full text_align_center">
+                                      <div class="slider_image">
+                                          <img class="img-responsive" src="{% static 'images/3.png' %}" alt="#" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <div class="row">
+                                  <div class="col-md-5">
+                                      <div class="slider_cont">
+                                          <h3>Sorry, there's no magic.<br>You gotta eat healthy</h3>
+                                          <p>to be healthy.</p>
+                                          
+                                      </div>
+                                  </div>
+                                  <div class="col-md-7 full text_align_center">
+                                      <div class="slider_image">
+                                          <img class="img-responsive" src="{% static 'images/1.png' %}" alt="#" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="carousel-item">
+                              <div class="row">
+                                  <div class="col-md-5">
+                                      <div class="slider_cont">
+                                          <h3>The doctor of the future<br>will no longer treat with drugs,</h3>
+                                          <p>but rather will cure with nutrition.</p>
+                                          
+                                      </div>
+                                  </div>
+                                  <div class="col-md-7 full text_align_center">
+                                      <div class="slider_image">
+                                          <img class="img-responsive" src="{% static 'images/5.png' %}" alt="#" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                          <i class="fa fa-angle-up"></i>
+                      </a>
+                      <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                          <i class="fa fa-angle-down"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<section class="resip_section">
+    <div class="container">
+        <div class="row">
+     <div class="col-md-12">
+   <div class="ourheading">
+<h2><u>Calorie Calculator</u></h2>
+</div>
+</div>    
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+    <!-- calculator-->
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="bg_bg">
+
+<div class="about">
+<div class="container" style="padding-left: 20%;">
+  <div class="row">
+     <div class="col-md-12">
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <div class="row">
+            <div class="col-sm-4">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" placeholder="50years"><br>
+            <label for="height">Height:</label>
+            <input type="text" id="height" name="height" placeholder="175cm"><br>
+            <label>Gender: </label>
+            <input type="radio" id="male" name="gender"  value="male" checked>
+            <label for="male">Male:</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female:</label><br>
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight" name="weight" placeholder="75kg"><br>
+          </div>
+            <div class="col-sm-4">
+                <label for="exercise">No Exercise:</label>
+                <input type="radio"  name="exercise" value="1.2" checked><br>
+                <label for="exercise">Light Exercise:</label>
+                <input type="radio"  name="exercise" value="1.375"><br>
+                <label for="exercise">Moderated Exercise:</label>
+                <input type="radio"  name="exercise" value="1.55"><br>
+                <label for="exercise">Very Active:</label>
+                <input type="radio"  name="exercise" value="1.725"><br>
+                <label for="exercise">Extra Active:</label>
+                <input type="radio"  name="exercise" value="1.9"><br>
+            </div>
+          </div>
+            <style>
+                .button-calc {
+                  border-radius: 25px;
+                  color: white;
+                  padding: 15px 32px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                  background-color: #4CAF50;
+                  margin-left: 25%;
+                }
+                
+                
+                
+                </style>
+                </head>
+                <body>
+                
+                <button class="button-calc" type="submit">Submit</button><br>
+                
+                {% if res %}
+                <br><label for="result">Your BMR is {{ bmr }}kcal/day <br>Your BMI is {{bmi}}kg/m<sup>2</sup> <br><b>Result:<u>You need {{ res }} cal daily</u></b></label>
+                {% endif %}
+        </form>
+        
+     </div>      
+   </div> 
+</div>
+</div>
+<!-- end about -->
+
+<!-- blog -->
+<div class="blog">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <div class="title">
+      <i><img src="{% static 'images/log.png' %}" alt="#"/></i>
+      <h2><u>Related</u></h2>
+      <span>Your basal metabolic rate helps you figure out how many calories your body burns each day, and it's the most important starting place for losing weight. BMR can be helpful is losing weight is one of your goals. No matter what your goals, when it comes to nutrition and body recomposition, knowledge is power.</span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+    <div class="blog_box">
+      <div class="blog_img_box">
+        <figure><img src="{% static 'images/bmr.png' %}" alt="#"/>
+         
+        </figure>
+      </div>
+      <h3>BMR</h3>
+      <p>Basal metabolic rate is the energy released when the subject is at complete mental and physical rest i.e. in a room with comfortable temperature and humidity, awake and sitting in a reclining position, 10-12 hours after the last meal. It is essentially the minimum energy required to maintain the heart rate, respiration, kidney function etc.</p>
+    </div>
+  </div>
+   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mar_bottom">
+    <div class="blog_box">
+      <div class="blog_img_box">
+        <figure><img src="{% static 'images/exercise.png' %}" alt="#"/>
+         
+        </figure>
+      </div>
+      <h3>Exercise</h3>
+      <p>You do not have to force yourself into intense workouts at the gym but you need to keep as active as possible. You can stick to easy floor exercises, swimming, walking, or simply keep yourself moving by doing some household chores. Do what your body allows you to do.</p>
+    </div>
+  </div>
+   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <div class="blog_box">
+      <div class="blog_img_box">
+        <figure><img src="{% static 'images/diet.png' %}" alt="#"/>
+         
+        </figure>
+      </div>
+      <h3>Balanced Diet</h3>
+      <p>The importance of a balanced diet can’t be emphasized enough for a healthy lifestyle. A healthy lifestyle can be attained by maintaining a balanced diet and keeping into consideration to meet all the essential nutrients required by the body. A proper meal plan helps to attain ideal body weight and reduce the risk of chronic diseases like diabetes, cardiovascular and other types of cancer.</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="Client">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <div class="title">
+      <i><img src="{% static 'images/log.png' %}" alt="#"/></i>
+      <h2>About dev</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+     <div class="Client_box">
+       <img src="{% static 'images/mes.jpg' %}" alt="#"/>
+       <h3>Nitin</h3>
+       <p>Well I'm bad in explaining myself. But I can make you understand though this snippet <br>
+        &nbsp;{<br>While(notEfficientProgrammer):<br>{<br>puttingMy("95%effort")<br>}<br>
+
+        print('yeah! finally done...')<br>}
+</p>
+       <i><img src="{% static 'images/client_icon.png' %}" alt="#"/></i>
+     </div>
+  </div>
+</div>
+</div>
+</div>  
+<!-- end Our Client -->
+
+
+
+  
+        <div id = "footer">
+        <div class="container">
+            <h1><u>Contacts:-<u/></h1>
+            
+                
+              <div class=" " style="margin-bottom: 50px;">
+                <a href="https://www.instagram.com/nitin.rajsingh/"><img src="{% static 'images/insta.png' %}" alt="instagram">:- https://www.instagram.com/nitin.rajsingh/</a>
+                </div>
+                
+                <div >
+                    <a href="https://github.com/Nitindrdarker"><img src="{% static 'images/git.png' %}" alt="github">:- https://github.com/Nitindrdarker</a></div>
+                
+                
+          
+        </div>
+    </div>
+
+
+
+
+
+<div class="overlay"></div>
+{% endblock %}

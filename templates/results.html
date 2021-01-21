@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+<div class="slider_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><br><br>
+                <div class='container' style=" padding: 2px; width: 400px;">               
+                        <h1 style="color: white;">Data</h1>
+                        <ol>
+                            {% for i in profile %}
+                            <li style="color: white;">({{forloop.counter}}).Date:{{i.date}}<br>BMR:{{ i.bmr }} Kcal/Day<br>BMI:{{i.bmi}}kg/m<sup>2</sup> <br>Calorie Needed/day:-{{i.res}} Cal/Day</li>
+                            <hr style="border: 2px white solid;">
+                            {% endfor %}
+                        </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
