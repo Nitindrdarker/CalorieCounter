@@ -13,15 +13,39 @@ def home(request):
     if request.method ==  'POST':
         try:
             exercise = request.POST['exercise']
-            age = int(request.POST['age'])
-            height = int(request.POST['height'])
-            gender = request.POST['gender']
-            weight = int(request.POST['weight'])
+            
         except Exception:
             exercise = 1.2
+            
+        try:
+            
+            age = int(request.POST['age'])
+            
+        except Exception:
+            
             age = 50
+            
+        try:
+            
+            height = int(request.POST['height'])
+            
+        except Exception:
+            
             height = 175
+            
+        try:
+            
+            gender = request.POST['gender']
+            
+        except Exception:
+            
             gender = 'male'
+            
+        try:
+            
+            weight = int(request.POST['weight'])
+        except Exception:
+            
             weight = 75
         bmi = (weight)/((height/100)**2)
         if (gender == 'male'):
